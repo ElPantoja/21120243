@@ -225,3 +225,371 @@ int main() {
 | Tipo De Dato | Tipado   | Paradigma | Estructura |
 | ------------ | -------- | --------  | ---------  |
 | Char  | Estatico |  Imperativa |Tipo de Dato **Nombre** (Tipo de Dato **Dato**) |
+
+***
+
+- # Java
+  * ### Factorial
+
+
+``` java   
+public class Factorial {
+    public static void main(String[] args) {
+        int numero = 5; // Cambia este valor por el número del cual deseas calcular el factorial
+        long resultado = calcularFactorial(numero);
+        System.out.println("El factorial de " + numero + " es: " + resultado);
+    }
+
+    public static long calcularFactorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * calcularFactorial(n - 1);
+        }
+    }
+}
+
+```
+>[!IMPORTANT]
+> Nota: Se declara el tipo de variable
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| Int  | Estatico |  Orientado a Objetos | public class **Nombre** {} |
+  - ### Fibonacci
+
+``` java
+
+public class Fibonacci {
+    public static void main(String[] args) {
+        int n = 10; // Cambia este valor por el término de Fibonacci que deseas calcular
+        long resultado = fibonacci(n);
+        System.out.println("El término " + n + " de la secuencia de Fibonacci es: " + resultado);
+    }
+
+    public static long fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+}
+
+
+```
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| Int  | Estatico |  Orientado a Objetos | public class **Nombre** {} | 
+
+  * ### Palabra Palindroma 
+
+``` java
+import java.util.Scanner;
+
+public class Palindromo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese una palabra: ");
+        String palabra = scanner.nextLine();
+
+        if (esPalindromo(palabra)) {
+            System.out.println(palabra + " es un palíndromo.");
+        } else {
+            System.out.println(palabra + " no es un palíndromo.");
+        }
+    }
+
+    public static boolean esPalindromo(String palabra) {
+        // Eliminar los espacios en blanco y convertir la palabra a minúsculas
+        palabra = palabra.replaceAll("\\s+", "").toLowerCase();
+        
+        int longitud = palabra.length();
+        
+        // Verificar si la palabra es un palíndromo
+        for (int i = 0; i < longitud / 2; i++) {
+            if (palabra.charAt(i) != palabra.charAt(longitud - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+```
+
+>[!IMPORTANT]
+> Nota: Se declara la cadena de caracteres
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| String  | Estatico |  Orientado a Objetos | public class **Nombre** {} |
+
+
+- # Perl
+  * ### Factorial
+
+
+``` perl
+sub factorial {
+    my $n = shift;
+    if ($n == 0) {
+        return 1;
+    } else {
+        return $n * factorial($n - 1);
+    }
+}
+
+my $numero = 5; # Cambia este valor al número del cual quieres calcular el factorial
+my $resultado = factorial($numero);
+print "El factorial de $numero es: $resultado\n";
+
+
+
+```
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| Int  | Dinamico |  Imperativa | **factorial** $n y el numero $numero |
+  
+  - ### Fibonacci
+
+``` perl
+sub fibonacci {
+    my $n = shift;
+    my ($a, $b) = (0, 1);
+
+    for (my $i = 0; $i < $n; $i++) {
+        print "$a "; # Imprime el término actual de la secuencia Fibonacci
+        my $temp = $a + $b;
+        $a = $b;
+        $b = $temp;
+    }
+}
+
+my $limite = 10; # Cambia este valor para especificar cuántos términos de Fibonacci deseas calcular
+print "Secuencia de Fibonacci de los primeros $limite términos:\n";
+fibonacci($limite);
+
+```
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| Int  | Dinamico |  Imperativa | **fibonacci** $n y el Limite $limite | 
+
+  * ### Palabra Palindroma 
+
+``` perl
+sub es_palindroma {
+    my $palabra = shift;
+    my $reversa = reverse $palabra;
+    return lc($palabra) eq lc($reversa); # Compara la palabra original con su reverso, ignorando mayúsculas y minúsculas
+}
+
+my $entrada = "reconocer"; # Cambia esta palabra para verificar si es palíndroma
+if (es_palindroma($entrada)) {
+    print "$entrada es una palabra palíndroma.\n";
+} else {
+    print "$entrada no es una palabra palíndroma.\n";
+}
+
+```
+
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| String  | Dinamico |  Imperativa | **es_palindroma** $n y palabra inversa $reversa  | 
+
+
+
+- # GO
+  * ### Factorial
+
+
+``` go
+package main
+
+import "fmt"
+
+func factorial(n int) int {
+    if n == 0 {
+        return 1
+    }
+    return n * factorial(n-1)
+}
+
+func main() {
+    numero := 5 // Cambia este valor al número del cual quieres calcular el factorial
+    resultado := factorial(numero)
+    fmt.Printf("El factorial de %d es: %d\n", numero, resultado)
+}
+
+```
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| Int  | Estatico |  Imperativa | func **main**() { } |
+  
+  - ### Fibonacci
+
+``` go
+package main
+
+import "fmt"
+
+func fibonacci(n int) {
+    a, b := 0, 1
+    for i := 0; i < n; i++ {
+        fmt.Printf("%d ", a) // Imprime el término actual de la secuencia Fibonacci
+        a, b = b, a+b
+    }
+    fmt.Println() // Imprime una nueva línea al final
+}
+
+func main() {
+    limite := 10 // Cambia este valor para especificar cuántos términos de Fibonacci deseas calcular
+    fmt.Printf("Secuencia de Fibonacci de los primeros %d términos:\n", limite)
+    fibonacci(limite)
+}
+
+```
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| Int  | Estatico |  Imperativa | func **main**() { } | 
+
+  * ### Palabra Palindroma 
+
+``` go
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func esPalindroma(palabra string) bool {
+    palabra = strings.ToLower(palabra) // Convertir la palabra a minúsculas para hacer la comparación insensible a mayúsculas
+    for i := 0; i < len(palabra)/2; i++ {
+        if palabra[i] != palabra[len(palabra)-1-i] {
+            return false // Si los caracteres no coinciden, la palabra no es palíndroma
+        }
+    }
+    return true // Si todos los caracteres coinciden, la palabra es palíndroma
+}
+
+func main() {
+    entrada := "reconocer" // Cambia esta palabra para verificar si es palíndroma
+    if esPalindroma(entrada) {
+        fmt.Printf("%s es una palabra palíndroma.\n", entrada)
+    } else {
+        fmt.Printf("%s no es una palabra palíndroma.\n", entrada)
+    }
+}
+
+```
+
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| String  | Estatico |  Imperativa | func **main**() { } |
+
+- # Rust
+  * ### Factorial
+
+
+``` rust
+fn factorial(n: u64) -> u64 {
+    if n == 0 {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+fn main() {
+    let numero: u64 = 5; // Cambia este valor al número del cual quieres calcular el factorial
+    let resultado = factorial(numero);
+    println!("El factorial de {} es: {}", numero, resultado);
+}
+
+
+```
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| Int (u64) | Estatico |  Imperativa | fn **main**() { } |
+  
+  - ### Fibonacci
+
+``` rust
+
+fn fibonacci(n: u64) -> u64 {
+    if n == 0 {
+        return 0;
+    } else if n == 1 {
+        return 1;
+    } else {
+        let mut a = 0;
+        let mut b = 1;
+        let mut temp;
+        
+        for _ in 2..=n {
+            temp = a + b;
+            a = b;
+            b = temp;
+        }
+        
+        return b;
+    }
+}
+
+fn main() {
+    let limite: u64 = 10; // Cambia este valor para especificar cuántos términos de Fibonacci deseas calcular
+    println!("Secuencia de Fibonacci de los primeros {} términos:", limite);
+    for i in 0..limite {
+        print!("{} ", fibonacci(i));
+    }
+    println!();
+}
+
+```
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| Int (u64) | Estatico |  Imperativa | fn **main**() { } |
+
+  * ### Palabra Palindroma 
+
+``` rust
+fn es_palindroma(palabra: &str) -> bool {
+    let palabra = palabra.to_lowercase(); // Convertir la palabra a minúsculas para hacer la comparación insensible a mayúsculas
+    let caracteres: Vec<char> = palabra.chars().collect(); // Convertir la palabra en una lista de caracteres
+    let longitud = caracteres.len();
+    
+    for i in 0..longitud/2 {
+        if caracteres[i] != caracteres[longitud - 1 - i] {
+            return false; // Si los caracteres no coinciden, la palabra no es palíndroma
+        }
+    }
+    true // Si todos los caracteres coinciden, la palabra es palíndroma
+}
+
+fn main() {
+    let entrada = "reconocer"; // Cambia esta palabra para verificar si es palíndroma
+    if es_palindroma(entrada) {
+        println!("{} es una palabra palíndroma.", entrada);
+    } else {
+        println!("{} no es una palabra palíndroma.", entrada);
+    }
+}
+
+
+```
+
+
+| Tipo De Dato | Tipado   | Paradigma | Estructura |
+| ------------ | -------- | --------  | ---------  |
+| chars (&str) | Estatico |  Imperativa | fn **main**() { } |
