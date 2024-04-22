@@ -1,14 +1,14 @@
 1.- Existe una persona en la feria tal que si dicha persona paga, entonses todas las persona pagan:
 
-Variables:
-  * Persona en la feria.
-  * Pagar.
-Constantes:
-  * Feria.
-Relaciones:
-  * "Si... entonces".
-Cuantificador:
-  * Existe.
+* Variables:
+  + Persona en la feria.
+  + Pagar.
+* Constantes:
+  + Feria.
+* Relaciones:
+  + "Si... entonces".
+* Cuantificador:
+  + Existe.
 
 2.- Socrates es un hombre. Los Hombres son mortales. Luego, Socrates es Mortal :
 
