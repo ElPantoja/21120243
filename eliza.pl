@@ -46,6 +46,20 @@ template([yo, s(_), yo, soy, s(_),'.'], [por, que, 0, eres, 1, '?'], [1, 4]).
 template([yo, s(_), tu, '.'], [why, do, you, 0, me ,'?'], [1]).
 template([yo, soy, s(_),'.'], [porque, eres, tu, 0, '?'], [2]).
 
+template([yo, s(_), yo, puedo, s(_), '.'], [por que, tu, 0, puedes, 1, '?'], [1, 4]).
+template([yo, s(_), tu, ',', es, s(_), '.'], [por que, tu, 0, ',', es, 1, '?'], [1, 4]).
+template([yo, s(_), tu, ',', s(_), '.'], [por que, tu, 0, ',', es, 1, '?'], [1, 4]).
+template([yo, s(_), tu, ',', s(_), s(_), '.'], [why, are, you, 0, ',', es, 1, '?'], [1, 4]).
+template([yo, s(_), s(_), ',', es, s(_), '.'], [por que, eres, tu, 0, ',', es, 1, '?'], [2, 4]).
+
+template([yo, s(_), tu, ',', s(_), ',', s(_), '.'], [por que, tu, 0, ',', es, 1, ',', es, 2, '?'], [1, 3, 4]).
+template([tu, eres, s(_), ',', s(_), ',', s(_), '?'], [por que, eres, tu, 0, ',', es, 1, ',', es, 2, '?'], [1, 3, 4]).
+template([por, que, tu, ',', s(_), ',', s(_), ',', s(_), '?'], [por que, tu, 0, ',', es, 1, ',', es, 2, '?'], [1, 3, 4]).
+template([eres, s(_), ',', s(_), ',', s(_), '?'], [por que, eres, tu, 0, ',', es, 1, ',', es, 2, '?'], [1, 3, 4]).
+template([por, que, tu, ',', s(_), ',', es, s(_), ',', '?'], [por que, tu, 0, ',', es, 1, ',', es, 2, '?'], [1, 3, 4]).
+
+
+
 % pregunta algo que le gusta a eliza
 template([te, gustan, las, s(_), _], [flagLike], [3]).
 template([te, gustan, los, s(_), _], [flagLike], [3]).
